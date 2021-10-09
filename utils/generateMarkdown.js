@@ -2,24 +2,24 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
 
-  for (i = 0; i < license.stack; i++){
-    switch (i) {
-      case 'MIT':
-        [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/);
-        break;
-      case 'GNU GPLv3':
-        [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html);
-        break;
-      case 'ISC':
-        [![ISC license](https://img.shields.io/badge/License-ISC-green.svg)](http://perso.crans.org/besson/LICENSE.html);
-        break;
-      case 'Apache 2.0':
-        [![Npm package license](https://badgen.net/npm/llicense/discord.js)](https://npmjs.com/package/discord.js);
-        break;
-      default:
-        console.log('');
-      }
-    }
+  // for (i = 0; i < license.stack; i++){
+  //   switch (i) {
+  //     case 'MIT':
+  //       [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/);
+  //       break;
+  //     case 'GNU GPLv3':
+  //       [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html);
+  //       break;
+  //     case 'ISC':
+  //       [![ISC license](https://img.shields.io/badge/License-ISC-green.svg)](http://perso.crans.org/besson/LICENSE.html);
+  //       break;
+  //     case 'Apache 2.0':
+  //       [![Npm package license](https://badgen.net/npm/llicense/discord.js)](https://npmjs.com/package/discord.js);
+  //       break;
+  //     default:
+  //       console.log('');
+  //     }
+  //   }
   
 
 }

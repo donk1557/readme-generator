@@ -10,31 +10,31 @@ const questions = inquire.prompt([
   message: 'What is the title of the project?',
   name: 'title',
 },
-{
-  type: 'editor',
-  message: 'Provide description',
-  name: 'description',
-},
-{
-  type: 'editor',
-  message: 'Provide installation instructions',
-  name: 'installation',
-},
-{
-  type: 'editor',
-  message: 'Provide usage information',
-  name: 'usage',
-},
-{
-  type: 'editor',
-  message: 'Provide contributing guidelines',
-  name: 'contribute',
-},
-{
-  type: 'editor',
-  message: 'Provide test instructions',
-  name: 'test',
-},
+// {
+//   type: 'editor',
+//   message: 'Provide description',
+//   name: 'description',
+// },
+// {
+//   type: 'editor',
+//   message: 'Provide installation instructions',
+//   name: 'installation',
+// },
+// {
+//   type: 'editor',
+//   message: 'Provide usage information',
+//   name: 'usage',
+// },
+// {
+//   type: 'editor',
+//   message: 'Provide contributing guidelines',
+//   name: 'contribute',
+// },
+// {
+//   type: 'editor',
+//   message: 'Provide test instructions',
+//   name: 'test',
+// },
 {
   type: 'checkbox',
   message: 'What licenses are associated with this project?',
@@ -51,16 +51,32 @@ const questions = inquire.prompt([
   message: 'What email address do you want to associate to this project?',
   name: 'email',
 },
-]).then((responses) =>{markDown.generateMarkdown();})
+]).then((data) =>{
+  console.log(data);
+  console.log(markDown(data));
+  const content = JSON.stringify(markDown(data));
+  console.log(content);
+  writeToFile(content);
+  
+} )
+
+// ).then((data) =>{
+//   console.log(data);
+//   writeToFile(JSON.stringify(data));
+// }
+// )
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile('log.txt', JSON.stringify(markDown), (err) =>
+function writeToFile(fileName, content) {
+  console.log(JSON.stringify(content));
+  fs.writeFileSync('test.md', content, (err) =>
   err ? console.error(err) : console.log('Success!')
 );}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+}
 
 // Function call to initialize app
 init();
