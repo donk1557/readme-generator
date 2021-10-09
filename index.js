@@ -53,10 +53,14 @@ const questions = inquire.prompt([
 },
 ]).then((data) =>{
   console.log(data);
+  console.log("TEST2");
   console.log(markDown(data));
   const content = JSON.stringify(markDown(data));
+  console.log("TEST3");
   console.log(content);
+  console.log("7");
   writeToFile(content);
+  console.log("TEST4");
   
 } )
 
@@ -67,9 +71,10 @@ const questions = inquire.prompt([
 // )
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, content) {
+function writeToFile(content) {
   console.log(JSON.stringify(content));
-  fs.writeFileSync('test.md', content, (err) =>
+  console.log("TEST");
+  fs.writeFile('test.md', JSON.stringify(content), (err) =>
   err ? console.error(err) : console.log('Success!')
 );}
 
