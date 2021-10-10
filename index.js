@@ -52,8 +52,8 @@ const questions = inquire.prompt([
   name: 'email',
 },
 ]).then((data) =>{
-  
-  const content = JSON.stringify(markDown(data));
+
+  const content = markDown(data);
   writeToFile("test.md",content);
   
 } )
