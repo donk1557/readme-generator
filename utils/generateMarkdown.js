@@ -1,26 +1,26 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
-
-  // for (i = 0; i < license.stack; i++){
-  //   switch (i) {
-  //     case 'MIT':
-  //       [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/);
-  //       break;
-  //     case 'GNU GPLv3':
-  //       [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html);
-  //       break;
-  //     case 'ISC':
-  //       [![ISC license](https://img.shields.io/badge/License-ISC-green.svg)](http://perso.crans.org/besson/LICENSE.html);
-  //       break;
-  //     case 'Apache 2.0':
-  //       [![Npm package license](https://badgen.net/npm/llicense/discord.js)](https://npmjs.com/package/discord.js);
-  //       break;
-  //     default:
-  //       console.log('');
-  //     }
-  //   }
-  
+function renderLicenseBadge(data) {
+let lic;
+  for (i = 0; i < data.stack.length; i++){
+    switch (data.stack[i]) {
+      case 'MIT':
+      lic = `![MIT license](https://img.shields.io/badge/License-MIT-blue.svg) (https://lbesson.mit-license.org/)`;
+      break;
+      case 'GNU GPLv3':
+      lic = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg) (http://perso.crans.org/besson/LICENSE.html)`;
+      break;
+      case 'ISC':
+      lic = `![ISC license](https://img.shields.io/badge/License-ISC-green.svg) (http://perso.crans.org/besson/LICENSE.html)`;
+      break;
+      case 'Apache 2.0':
+      lic = `![Npm package license](https://badgen.net/npm/llicense/discord.js) (https://npmjs.com/package/discord.js)`;
+      break;
+      default:
+      lic =``;
+    }
+  }
+  return lic;
 
 }
 
@@ -37,37 +37,37 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
   \
-  ## Description
+## Description
   \
   ${data.description}
   \
-  ## Installation Instructions
+## Installation Instructions
   \
   ${data.installation}
   \
-  ## Usage Information
+## Usage Information
   \
   ${data.usage}
   \
-  ## Contributing Guidelines
+## Contributing Guidelines
   \
   ${data.contribute}
   \
-  ## Test Instructions
+## Test Instructions
   \
   ${data.test}
   \
-  ## License
+## License
   \
-  ${data.stack}
+${renderLicenseBadge(data)}
   \
-  ## Questions
+## Questions
   \
-  Github username: ${data.gitHubUser}
+Github username: ${data.gitHubUser}
   \
-  Github profile link: https://github.com/${data.gitHubUser}
+Github profile link: https://github.com/${data.gitHubUser}
   \
-  email: ${data.email}\
+email: ${data.email}\
 `;
 }
 
