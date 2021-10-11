@@ -10,31 +10,31 @@ const questions = inquire.prompt([
   message: 'What is the title of the project?',
   name: 'title',
 },
-// {
-//   type: 'editor',
-//   message: 'Provide description',
-//   name: 'description',
-// },
-// {
-//   type: 'editor',
-//   message: 'Provide installation instructions',
-//   name: 'installation',
-// },
-// {
-//   type: 'editor',
-//   message: 'Provide usage information',
-//   name: 'usage',
-// },
-// {
-//   type: 'editor',
-//   message: 'Provide contributing guidelines',
-//   name: 'contribute',
-// },
-// {
-//   type: 'editor',
-//   message: 'Provide test instructions',
-//   name: 'test',
-// },
+{
+  type: 'editor',
+  message: 'Provide description',
+  name: 'description',
+},
+{
+  type: 'editor',
+  message: 'Provide installation instructions',
+  name: 'installation',
+},
+{
+  type: 'editor',
+  message: 'Provide usage information',
+  name: 'usage',
+},
+{
+  type: 'editor',
+  message: 'Provide contributing guidelines',
+  name: 'contribute',
+},
+{
+  type: 'editor',
+  message: 'Provide test instructions',
+  name: 'test',
+},
 {
   type: 'checkbox',
   message: 'What licenses are associated with this project?',
@@ -54,15 +54,9 @@ const questions = inquire.prompt([
 ]).then((data) =>{
 
   const content = markDown(data);
-  writeToFile("test.md",content);
+  writeToFile("readMe.md",content);
   
 } )
-
-// ).then((data) =>{
-//   console.log(data);
-//   writeToFile(JSON.stringify(data));
-// }
-// )
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, content) {

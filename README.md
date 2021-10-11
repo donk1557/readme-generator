@@ -1,3 +1,12 @@
 # readme-generator
 
-This does not work. A type error for the data argument in the writeToFile function is thrown. Even though console logs in code show an object for responses to the prompts, the temperate literal when interpolated, and the string value for the readme. The console log for writeToFile displays as undefined.
+## description
+Prompts the user to input description, installation instructions, usage, contributing guidelines, test instructions, licensing, and contact information. A readme file is generated with the aforementioned credentials and organized using markdown format.
+
+## usage
+Must use node.js to run application; this application has inquirer as a dependency.
+
+## example of functionality & additional info
+GitHub repo link:
+Picture of generated readme:
+Video outlining usage: https://drive.google.com/file/d/1qDFShZa-OVBwwICsndpWdg1ZAr5OmPTM/view
